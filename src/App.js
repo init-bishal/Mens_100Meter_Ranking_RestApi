@@ -1,0 +1,11 @@
+const express=require("express")
+const { connect } = require("mongoose")
+require('./DB/conn')
+const app=express()
+const port=process.env.PORT || 3000
+const MensRanking=require("./models/men")
+const router=require("./Router/router")
+app.use(express.json())
+app.use(router)
+app.listen(port,()=>{console.log(`listening at: ${port}`)
+})
